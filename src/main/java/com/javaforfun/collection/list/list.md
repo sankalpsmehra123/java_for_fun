@@ -23,16 +23,22 @@
 | Underlaying Data Structure | Resizable Array |
 | Possible Cursors | Iterator, ListIterator |
 
-ArrayList implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify ArrayList as all the elements after the modified block have to be moved to the next blocks. 
+ArrayList implements RandomAccess marked interface. 
+Due to this it is able to access data quickly. 
+But, it is very difficult to update or modify ArrayList 
+as all the elements after the modified block have to be 
+moved to the next blocks. Constructs an empty list with 
+initial capacity of 10 after reaching max capacity it creates 
+a new array list of new capacity and copies old array list 
+into it.
+
+> newCapacity  = (oldCapacity * 1.5) +1
+
 
 ### Constructors: 
-
-1. **ArrayList()**  
-: Constructs an empty list with an initial capacity of ten. 
-2. **ArrayList(int initialCapacity)**  
-: Constructs an empty list with the specified initial capacity. 
-3. **ArrayList(Collection <? extends E> c)**  
-: Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator. 
+- **ArrayList()** : Constructs an empty list with an initial capacity of ten.
+- **ArrayList(int initialCapacity)** : Constructs an empty list with the specified initial capacity. 
+- **ArrayList(Collection <? extends E> c)** : Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator. 
 
 ## LinkedList (Class) 
 

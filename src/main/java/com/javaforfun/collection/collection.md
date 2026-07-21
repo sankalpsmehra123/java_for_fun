@@ -4,10 +4,10 @@
 
 ### Sub-Classes OR Interfaces
 1. [List](/src/main/java/com/javaforfun/collection/list/list.md)
-   1. [ArrayList](/src/main/java/com/javaforfun/collection/list/arrayList/arraylist.md)
-   2. [LinkedList](/src/main/java/com/javaforfun/collection/list/linkedlist/linkedlist.md)
-   3. [Vector](/src/main/java/com/javaforfun/collection/list/vector/vector.md)
-   4. [Stack](/src/main/java/com/javaforfun/collection/list/stack/stack.md)
+   1. [ArrayList](/src/main/java/com/javaforfun/collection/list/list.md)
+   2. [LinkedList](/src/main/java/com/javaforfun/collection/list/list.md)
+   3. [Vector](/src/main/java/com/javaforfun/collection/list/list.md)
+   4. [Stack](/src/main/java/com/javaforfun/collection/list/list.md)
 2. [Set](/src/main/java/com/javaforfun/collection/set/set.md) 
    1. [HashSet](/src/main/java/com/javaforfun/collection/set/hashset/hashset.md)
    2. [LinkedHashSet](/src/main/java/com/javaforfun/collection/set/linkedhashset/linkedhashset.md)
