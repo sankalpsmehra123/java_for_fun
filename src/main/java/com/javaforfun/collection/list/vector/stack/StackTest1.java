@@ -1,4 +1,4 @@
-package com.javaforfun.collections.list.vector.stack;
+package com.javaforfun.collection.list.vector.stack;
 
 import java.util.LinkedList;
 import java.util.Queue;

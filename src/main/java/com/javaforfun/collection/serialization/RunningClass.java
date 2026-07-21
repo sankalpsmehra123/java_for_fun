@@ -1,4 +1,4 @@
-package com.javaforfun.collections.serialization;
+package com.javaforfun.collection.serialization;
 
 import java.io.IOException;
 

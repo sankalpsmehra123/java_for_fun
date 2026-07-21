@@ -1,4 +1,12 @@
-# List (Interface) 
+# List (Interface)
+
+| Property | Description |
+| --- | --- |
+| Version | Java 1.2 |  
+| Storage Type | Heterogeneous Data. |
+| Stores Null Values | Yes |
+| Allows Duplicate | Yes |
+| Insertion Order | Preserved |
 
 ## ArrayList (Class) 
 
@@ -19,11 +27,11 @@ ArrayList implements RandomAccess marked interface. Due to this it is able to ac
 
 ### Constructors: 
 
-1. ***ArrayList()***  
+1. **ArrayList()**  
 : Constructs an empty list with an initial capacity of ten. 
-2. ***ArrayList(int initialCapacity)***  
+2. **ArrayList(int initialCapacity)**  
 : Constructs an empty list with the specified initial capacity. 
-3. ***ArrayList(Collection <? extends E> c)***  
+3. **ArrayList(Collection <? extends E> c)**  
 : Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator. 
 
 ## LinkedList (Class) 
@@ -45,9 +53,9 @@ LinkedList Has to traverse through each node to search an element. Due to data a
 
 ### Constructors: 
 
-1. ***LinkedList()***  
+1. **LinkedList()**  
 : Constructs an empty list. 
-2. ***LinkedList(Collection <? extends E> c)***  
+2. **LinkedList(Collection <? extends E> c)**  
 : Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator. 
 
 ## Vector (Class) 
@@ -69,17 +77,17 @@ LinkedList Has to traverse through each node to search an element. Due to data a
 Vector implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify ArrayList as all the elements after the modified block have to be moved to the next blocks. 
 
 ### Child Class:
-[Stack (Class)](List.md#stack-class)
+[Stack (Class)](list.md#stack-class)
 
 ### Constructors: 
 
-1. ***Vector()***  
+1. **Vector()**  
 : Constructs an empty vector so that its internal data array has size 10 and its standard capacity increment is zero. 
-2. ***Vector(int initialCapacity)***  
+2. **Vector(int initialCapacity)**  
 : Constructs an empty vector with the specified initial capacity and with its capacity increment equal to zero. 
-3. ***Vector(int initialCapacity, int capacityIncrement)***  
+3. **Vector(int initialCapacity, int capacityIncrement)**  
 : Constructs an empty vector with the specified initial capacity and capacity increment. 
-4. ***Vector(Collection <? extends E> c)***  
+4. **Vector(Collection <? extends E> c)**  
 : Constructs a vector containing the elements of the specified collection, in the order they are returned by the collection's iterator. 
 
 
@@ -106,7 +114,7 @@ Stack implements RandomAccess marked interface. Due to this it is able to access
 - Stack follows LIFO (last in first out). 
 
 ### Parent Class:
-[Vector (Class)](List.md#vector-class)
+[Vector (Class)](list.md#vector-class)
 
 ### Constructors: 
 
@@ -114,48 +122,27 @@ Stack implements RandomAccess marked interface. Due to this it is able to access
 
 ## Most Used Methods in List: 
 
-- ***add(E e)***  
-: Ensures that this collection contains the specified element (optional operation).
-- ***addAll(Collection<? extends E> c)***  
-: Adds all of the elements in the specified collection to this collection (optional operation).
-- ***addAll(int index, Collection<? extends E> c)***  
-: Inserts all of the elements in the specified collection into this list at the specified position (optional operation).
-- ***addFirst(E e)***  
-: Adds an element as the first element of this collection (optional operation).
-- ***addLast(E e)***  
-: Adds an element as the last element of this collection (optional operation).
-- ***clear()***  
-: Removes all of the elements from this collection (optional operation).
-- ***contains(Object o)***  
-: Returns true if this collection contains the specified element
-- ***containsAll(Collection<?> c)***  
-: Returns true if this collection contains all of the elements in the specified collection. 
-- ***equals(Object o)***  
-: Compares the specified object with this collection for equality. 
-- ***retainAll(Collection<?> c)***  
-: Retains only the elements in this collection that are contained in the specified collection (optional operation). 
-- ***remove(Object o)***  
-: Removes a single instance of the specified element from this collection, if it is present (optional operation). 
-- ***removeAll(Collection<?> c)***  
-: Removes all of this collection's elements that are also contained in the specified collection (optional operation). 
-- ***removeFirst()***  
-: Removes and returns the first element of this collection (optional operation). 
-- ***removeLast()***  
-: Removes and returns the last element of this collection (optional operation). 
-- ***subList(int fromIndex, int toIndex)***  
-: Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive. 
-- ***sort(Comparator<? super E> c)***  
-: Sorts this list according to the order induced by the specified Comparator. 
-- ***removeIf(Predicate<? super E> filter)***  
-: Removes all of the elements of this collection that satisfy the given predicate. 
-- ***set(int index, E element)***  
-: Replaces the element at the specified position in this list with the specified element (optional operation). 
-- ***get(int index)***  
-: Returns the element at the specified position in this list. 
-- ***getFirst()***  
-: Gets the first element of this collection. 
-- ***getLast()***  
-: Gets the last element of this collection. 
+- **add(E e)** : Ensures that this collection contains the specified element (optional operation).
+- **addAll(Collection<? extends E> c)** : Adds all of the elements in the specified collection to this collection (optional operation).
+- **addAll(int index, Collection<? extends E> c)** : Inserts all of the elements in the specified collection into this list at the specified position (optional operation).
+- **addFirst(E e)** : Adds an element as the first element of this collection (optional operation).
+- **addLast(Ee)** : Adds an element as the last element of this collection (optional operation).
+- **clear()** : Removes all of the elements from this collection (optional operation).
+- **contains(Object o)** : Returns true if this collection contains the specified element
+- **containsAll(Collection<?> c)** : Returns true if this collection contains all of the elements in the specified collection. 
+- **equals(Object o)** : Compares the specified object with this collection for equality. 
+- **retainAll(Collection<?> c)** : Retains only the elements in this collection that are contained in the specified collection (optional operation). 
+- **remove(Object o)** : Removes a single instance of the specified element from this collection, if it is present (optional operation). 
+- **removeAll(Collection<?> c)** : Removes all of this collection's elements that are also contained in the specified collection (optional operation). 
+- **removeFirst()** : Removes and returns the first element of this collection (optional operation). 
+- **removeLast()** : Removes and returns the last element of this collection (optional operation). 
+- **subList(int fromIndex, int toIndex)** : Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive. 
+- **sort(Comparator<? super E> c)** : Sorts this list according to the order induced by the specified Comparator. 
+- **removeIf(Predicate<? super E> filter)** : Removes all of the elements of this collection that satisfy the given predicate. 
+- **set(int index, E element)** : Replaces the element at the specified position in this list with the specified element (optional operation). 
+- **get(int index)** : Returns the element at the specified position in this list. 
+- **getFirst()** : Gets the first element of this collection. 
+- **getLast()** : Gets the last element of this collection. 
 
 Example of removeIf() method in point 17:  
 1. Removing even numbers from an list
