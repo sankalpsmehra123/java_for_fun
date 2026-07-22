@@ -1,4 +1,4 @@
-*/target/
 *.DS_Store
 .gitignore.swp
 .idea
+target/

@@ -2,6 +2,20 @@
 
 [Cursors](/src/main/java/com/javaforfun/collection/cursors/cursors.md) are used to read the data form Collection classes
 
+| Primitive Type | Wrapper Class | Size / Internal Nature |
+| :--- | :--- | :--- |
+| `byte` | `Byte` | 8-bit signed integer |
+| `short` | `Short` | 16-bit signed integer |
+| `int` | `Integer` | 32-bit signed integer |
+| `long` | `Long` | 64-bit signed integer |
+| `float` | `Float` | 32-bit floating point |
+| `double` | `Double` | 64-bit floating point |
+| `char` | `Character` | 16-bit Unicode character |
+| `boolean` | `Boolean` | Logical true/false value |
+
+##### Auto-Boxing:
+Collection in java use  `auto-boxing` concept to automatically convert primitive types into Objects
+
 ### Sub-Classes OR Interfaces
 1. [List](/src/main/java/com/javaforfun/collection/list/list.md)
    1. [ArrayList](/src/main/java/com/javaforfun/collection/list/list.md)
@@ -50,4 +64,5 @@ Both arrays and collection are used to represent group of objects as single enti
 ### Package
 java.util
 
-[//]: # (If the links above are not working please change the first "/folderPath/" directory name to your directory name so that the path looks like /<your_directory_name>/<fileName>)
+> Important Note:  
+>(If the links above are not working please change the first "/folderPath/" directory name to your directory name so that the path looks like /<your_directory_name>/<fileName>)
