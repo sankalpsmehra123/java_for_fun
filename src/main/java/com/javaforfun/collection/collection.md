@@ -1,5 +1,7 @@
 # Collection
 
+![Collecttion Hirarchy in Java image](https://www.scientecheasy.com/wp-content/uploads/2018/09/java-collection-hierarchy.png)
+
 [Cursors](/src/main/java/com/javaforfun/collection/cursors/cursors.md) are used to read the data form Collection classes
 
 | Primitive Type | Wrapper Class | Size / Internal Nature |

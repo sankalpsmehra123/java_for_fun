@@ -1,5 +1,7 @@
 # Map
 
+![Map Hirarchy In Java](https://scaler.com/topics/images/standard-map-interface-hierarchy.webp)
+
 ### Sub-Classes OR Interfaces
 1. [HashMap](/src/main/java/com/javaforfun/map/hashmap/hashmap.md)
 2. [LinkedHashMap](/src/main/java/com/javaforfun/map/linkedhashmap/linkedhashmap.md)
