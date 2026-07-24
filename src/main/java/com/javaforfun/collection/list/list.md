@@ -20,7 +20,7 @@
 | Allows Duplicate | Yes |
 | Method Call Type | NOT Synchronised |
 | Insertion Order | Preserved |
-| Underlaying Data Structure | Resizable Array |
+| Underlying Data Structure | Resizable Array |
 | Possible Cursors | Iterator, ListIterator |
 
 ArrayList implements RandomAccess marked interface. 
@@ -52,13 +52,13 @@ into it.
 | Allows Duplicate | Yes |
 | Method Call Type | NOT Synchronised  |
 | Insertion Order | Preserved |
-| Underlaying Data Structure | Double Linked List |
+| Underlying Data Structure | Doubly Linked List |
 | Possible Cursors | Iterator, ListIterator |
 
 LinkedList Has to traverse through each node to search an element. Due to data access is slow. But, it is really easy and quick to modify or update LinkedList.
 
 ### ArrayList vs LinkedList
-Data in ArrayList is stored in array format (continous memory location). ArrayList does implement RandomAccess `marker` interface. Data in LinkedList is stored in DoubleLinkedList format. LinkedList does not implement RandomAccess `marker` interface.
+Data in ArrayList is stored in array format (contiguous memory location). ArrayList does implement RandomAccess `marker` interface. Data in LinkedList is stored in a doubly linked list format. LinkedList does not implement RandomAccess `marker` interface.
 
 ### Constructors: 
 
@@ -79,13 +79,13 @@ Data in ArrayList is stored in array format (continous memory location). ArrayLi
 | Allows Duplicate | Yes |
 | Method Call Type | Synchronised |
 | Insertion Order | Preserved |
-| Underlaying Data Structure | Resizable Array |
-| Possible Cursors | Iterator, ListIterator, Enumerator | 
+| Underlying Data Structure | Resizable Array |
+| Possible Cursors | Iterator, ListIterator, Enumeration | 
  
 
-Vector implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify ArrayList as all the elements after the modified block have to be moved to the next blocks. 
+Vector implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify a Vector as all the elements after the modified block have to be moved to the next blocks. 
 
-### Voctor vs ArrayList  
+### Vector vs ArrayList  
 Vectors are synchronized and ArrayList are not synchronized  
 Vectors have 4 constructors where as ArrayList have 3
 
@@ -116,11 +116,11 @@ Vectors have 4 constructors where as ArrayList have 3
 | Allows Duplicate | Yes |
 | Method Call Type | Synchronised |
 | Insertion Order | Preserved |
-| Underlaying Data Structure | Resizable Array |
-| Possible Cursors | Iterator, ListIterator, Enumerator |
+| Underlying Data Structure | Resizable Array |
+| Possible Cursors | Iterator, ListIterator, Enumeration |
 
 
-Stack implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify ArrayList as all the elements after the modified block have to be moved to the next blocks. 
+Stack implements RandomAccess marked interface. Due to this it is able to access data quickly. But, it is very difficult to update or modify a Stack as all the elements after the modified block have to be moved to the next blocks. 
 
 ### Stack v/s Vector: 
 
@@ -133,82 +133,54 @@ Stack implements RandomAccess marked interface. Due to this it is able to access
 
 1. Stack(): Creates an empty Stack. 
 
-## Methods in List: 
+## Methods in List:
 
+> Note:  
+> These are the methods declared on the `List` interface itself. `List` also inherits all
+> `Collection` methods (`add(E)`, `remove(Object)`, `size()`, etc.) documented in [Collection](/src/main/java/com/javaforfun/collection/collection.md#methods-in-collection-class).
 
 | Modifier and Type | Method | Description |
 | :--- | :--- | :--- |
-| `void` | `add(String item)` | Adds the specified item to the end of scrolling list. |
-| `void` | `add(String item, int index)` | Adds the specified item to the scrolling list at the position indicated by the index. |
-| `void` | `addActionListener(ActionListener l)` | Adds the specified action listener to receive action events from this list. |
-| `void` | `addItem(String item)` | Deprecated. Replaced by add(String). |
-| `void` | `addItem(String item, int index)` | Deprecated. Replaced by add(String, int). |
-| `void` | `addItemListener(ItemListener l)` | Adds the specified item listener to receive item events from this list. |
-| `void` | `addNotify()` | Creates the peer for the list. |
-| `boolean` | `allowsMultipleSelections()` | Deprecated. As of JDK version 1.1, replaced by isMultipleMode(). |
-| `void` | `clear()` | Deprecated. As of JDK version 1.1, replaced by removeAll(). |
-| `int` | `countItems()` | Deprecated. As of JDK version 1.1, replaced by getItemCount(). |
-| `void` | `delItem(int position)` | Deprecated. Replaced by remove(String) and remove(int). |
-| `void` | `delItems(int start, int end)` | Deprecated. As of JDK version 1.1, Not for public use in the future. |
-| `void` | `deselect(int index)` | Deselects the item at the specified index. |
-| `AccessibleContext` | `getAccessibleContext()` | Gets the AccessibleContext associated with this List. |
-| `ActionListener[]` | `getActionListeners()` | Returns an array of all the action listeners registered on this list. |
-| `String` | `getItem(int index)` | Gets the item associated with the specified index. |
-| `int` | `getItemCount()` | Gets the number of items in the list. |
-| `ItemListener[]` | `getItemListeners()` | Returns an array of all the item listeners registered on this list. |
-| `String[]` | `getItems()` | Gets the items in the list. |
-| `<T extends EventListener> T[]` | `getListeners(Class<T> listenerType)` | Returns an array of all the objects currently registered as FooListeners upon this List. |
-| `Dimension` | `getMinimumSize()` | Determines the minimum size of this scrolling list. |
-| `Dimension` | `getMinimumSize(int rows)` | Gets the minimum dimensions for a list with the specified number of rows. |
-| `Dimension` | `getPreferredSize()` | Gets the preferred size of this scrolling list. |
-| `Dimension` | `getPreferredSize(int rows)` | Gets the preferred dimensions for a list with the specified number of rows. |
-| `int` | `getRows()` | Gets the number of visible lines in this list. |
-| `int` | `getSelectedIndex()` | Gets the index of the selected item on the list. |
-| `int[]` | `getSelectedIndexes()` | Gets the selected indexes on the list. |
-| `String` | `getSelectedItem()` | Gets the selected item on this scrolling list. |
-| `String[]` | `getSelectedItems()` | Gets the selected items on this scrolling list. |
-| `Object[]` | `getSelectedObjects()` | Gets the selected items on this scrolling list in an array of Objects. |
-| `int` | `getVisibleIndex()` | Gets the index of the item that was last made visible by the method makeVisible. |
-| `boolean` | `isIndexSelected(int index)` | Determines if the specified item in this scrolling list is selected. |
-| `boolean` | `isMultipleMode()` | Determines whether this list allows multiple selections. |
-| `boolean` | `isSelected(int index)` | Deprecated. As of JDK version 1.1, replaced by isIndexSelected(int). |
-| `void` | `makeVisible(int index)` | Makes the item at the specified index visible. |
-| `Dimension` | `minimumSize()` | Deprecated. As of JDK version 1.1, replaced by getMinimumSize(). |
-| `Dimension` | `minimumSize(int rows)` | Deprecated. As of JDK version 1.1, replaced by getMinimumSize(int). |
-| `protected String` | `paramString()` | Returns the parameter string representing the state of this scrolling list. |
-| `Dimension` | `preferredSize()` | Deprecated. As of JDK version 1.1, replaced by getPreferredSize(). |
-| `Dimension` | `preferredSize(int rows)` | Deprecated. As of JDK version 1.1, replaced by getPreferredSize(int). |
-| `protected void` | `processActionEvent(ActionEvent e)` | Processes action events occurring on this component by dispatching them to any registered ActionListener objects. |
-| `protected void` | `processEvent(AWTEvent e)` | Processes events on this scrolling list. |
-| `protected void` | `processItemEvent(ItemEvent e)` | Processes item events occurring on this list by dispatching them to any registered ItemListener objects. |
-| `void` | `remove(int position)` | Removes the item at the specified position from this scrolling list. |
-| `void` | `remove(String item)` | Removes the first occurrence of an item from the list. |
-| `void` | `removeActionListener(ActionListener l)` | Removes the specified action listener so that it no longer receives action events from this list. |
-| `void` | `removeAll()` | Removes all items from this list. |
-| `void` | `removeItemListener(ItemListener l)` | Removes the specified item listener so that it no longer receives item events from this list. |
-| `void` | `removeNotify()` | Removes the peer for this list. |
-| `void` | `replaceItem(String newValue, int index)` | Replaces the item at the specified index in the scrolling list with the new string. |
-| `void` | `select(int index)` | Selects the item at the specified index in the scrolling list. |
-| `void` | `setMultipleMode(boolean b)` | Sets the flag that determines whether this list allows multiple selections. |
-| `void` | `setMultipleSelections(boolean b)` | Deprecated. As of JDK version 1.1, replaced by setMultipleMode(boolean). |
+| `void` | `add(int index, E element)` | Inserts the specified element at the specified position in this list. |
+| `default void` | `addFirst(E e)` | Adds an element as the first element of this collection (optional operation). |
+| `default void` | `addLast(E e)` | Adds an element as the last element of this collection (optional operation). |
+| `static <E> List<E>` | `copyOf(Collection<? extends E> coll)` | Returns an unmodifiable List containing the elements of the given Collection. |
+| `boolean` | `equals(Object o)` | Compares the specified object with this list for equality. |
+| `E` | `get(int index)` | Returns the element at the specified position in this list. |
+| `default E` | `getFirst()` | Gets the first element of this collection. |
+| `default E` | `getLast()` | Gets the last element of this collection. |
+| `int` | `hashCode()` | Returns the hash code value for this list. |
+| `int` | `indexOf(Object o)` | Returns the index of the first occurrence of the specified element in this list, or -1 if this list does not contain the element. |
+| `int` | `lastIndexOf(Object o)` | Returns the index of the last occurrence of the specified element in this list, or -1 if this list does not contain the element. |
+| `ListIterator<E>` | `listIterator()` | Returns a list iterator over the elements in this list. |
+| `ListIterator<E>` | `listIterator(int index)` | Returns a list iterator starting at the specified position in this list. |
+| `static <E> List<E>` | `of(E... elements)` | Returns an unmodifiable list containing an arbitrary number of elements. |
+| `E` | `remove(int index)` | Removes the element at the specified position in this list. |
+| `default E` | `removeFirst()` | Removes and returns the first element of this collection. |
+| `default E` | `removeLast()` | Removes and returns the last element of this collection. |
+| `default void` | `replaceAll(UnaryOperator<E> operator)` | Replaces each element of this list with the result of applying the operator to that element. |
+| `default SequencedCollection<E>` | `reversed()` | Returns a reverse-ordered view of this collection. |
+| `E` | `set(int index, E element)` | Replaces the element at the specified position in this list with the specified element. |
+| `default void` | `sort(Comparator<? super E> c)` | Sorts this list according to the order induced by the specified Comparator. |
+| `List<E>` | `subList(int fromIndex, int toIndex)` | Returns a view of the portion of this list between fromIndex, inclusive, and toIndex, exclusive. |
 
 
-Example of removeIf() method in point 17:  
-1. Removing even numbers from an list
+Examples of the `removeIf()` method:
+1. Removing even numbers from a list
     ```java
-    List<lnteger> numbers = Arrays.asList(1, 2, 3, 4, 5);
-    numbers.removelf(num —> num % 2);
+    List<Integer> numbers = new ArrayList<>(List.of(1, 2, 3, 4, 5));
+    numbers.removeIf(num -> num % 2 == 0);
     System.out.println(numbers); // [1, 3, 5]
     ```
-2. Removing strings that end with "day" from an list 
+2. Removing strings that match "Tuesday" from a list
     ```java
-    List<String> days = Arrays.asList("Tuesday", "Wednesday");  
-    days.removelf(day -> day.equals("Tuesday")); 
-    System. out.println(days); // ["Wednesday"] 
+    List<String> days = new ArrayList<>(List.of("Tuesday", "Wednesday"));
+    days.removeIf(day -> day.equals("Tuesday"));
+    System.out.println(days); // ["Wednesday"]
     ```
-3. Using remove for Integer value
-    ```java 
-    List<lnteger> numbers = Arrays.asList(1, 2, 3, 4, 30);
-    numbers.remove(30); // Will give IndexOutOfBoundException
-    numbers.remove(Integer.valueOf(30)); // Will remove 30 from the ArrayList
+3. `remove(int)` vs `remove(Object)` for a `List<Integer>`
+    ```java
+    List<Integer> numbers = new ArrayList<>(List.of(1, 2, 3, 4, 30));
+    numbers.remove(30); // resolves to remove(int index) -> throws IndexOutOfBoundsException (only indexes 0-4 exist)
+    numbers.remove(Integer.valueOf(30)); // resolves to remove(Object o) -> removes the value 30 from the list
     ```

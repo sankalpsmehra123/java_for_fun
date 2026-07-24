@@ -1,6 +1,6 @@
 # Collection
 
-![Collecttion Hirarchy in Java image](https://www.scientecheasy.com/wp-content/uploads/2018/09/java-collection-hierarchy.png)
+![Collection Hierarchy in Java image](https://www.scientecheasy.com/wp-content/uploads/2018/09/java-collection-hierarchy.png)
 
 [Cursors](/src/main/java/com/javaforfun/collection/cursors/cursors.md) are used to read the data form Collection classes
 
@@ -23,14 +23,14 @@ Collection in java use  `auto-boxing` concept to automatically convert primitive
 
 ### Sub-Classes OR Interfaces
 1. [List](/src/main/java/com/javaforfun/collection/list/list.md)
-   1. [ArrayList](/src/main/java/com/javaforfun/collection/list/list.md)
-   2. [LinkedList](/src/main/java/com/javaforfun/collection/list/list.md)
-   3. [Vector](/src/main/java/com/javaforfun/collection/list/list.md)
-   4. [Stack](/src/main/java/com/javaforfun/collection/list/list.md)
+   1. [ArrayList](/src/main/java/com/javaforfun/collection/list/list.md#arraylist-class)
+   2. [LinkedList](/src/main/java/com/javaforfun/collection/list/list.md#linkedlist-class)
+   3. [Vector](/src/main/java/com/javaforfun/collection/list/list.md#vector-class)
+   4. [Stack](/src/main/java/com/javaforfun/collection/list/list.md#stack-class)
 2. [Set](/src/main/java/com/javaforfun/collection/set/set.md) 
-   1. [HashSet](/src/main/java/com/javaforfun/collection/set/hashset/hashset.md)
-   2. [LinkedHashSet](/src/main/java/com/javaforfun/collection/set/linkedhashset/linkedhashset.md)
-   3. [TreeSet](/src/main/java/com/javaforfun/collection/set/treeset/treeset.md)
+   1. [HashSet](/src/main/java/com/javaforfun/collection/set/set.md#hashset)
+      1. [LinkedHashSet](/src/main/java/com/javaforfun/collection/set/set.md#linkedhashset)
+   2. [TreeSet](/src/main/java/com/javaforfun/collection/set/set.md#treeset)
 3. [Queue](/src/main/java/com/javaforfun/collection/queue/queue.md)
    1. [PriorityQueue](/src/main/java/com/javaforfun/collection/queue/priorityqueue/priorityqueue.md)
    2. [Deque](/src/main/java/com/javaforfun/collection/queue/deque/deque.md)
@@ -43,7 +43,7 @@ Collection in java use  `auto-boxing` concept to automatically convert primitive
 Both arrays and collection are used to represent group of objects as single entity but
 
 #### Arrays:
-1. Stores group of objects: homogenous
+1. Stores group of objects: homogeneous
 2. Arrays are fixed in size: once created we cannot increase or decrease the size.
 ```java 
    int[] numbers = new int[5]; // the size is fixed for bigger array you need a new one. 
@@ -53,7 +53,7 @@ Both arrays and collection are used to represent group of objects as single enti
 5. It can store both primitive data types and object data
 
 #### Collection:
-1. Stores group of objects: homogenous & heterogeneous
+1. Stores group of objects: homogeneous & heterogeneous
 2. collection are dynamic
 3. Memory wise good
 4. Support methods making operations easy
@@ -63,8 +63,8 @@ Both arrays and collection are used to represent group of objects as single enti
 
 [**Map**](/src/main/java/com/javaforfun/map/map.md)  is used to store {key:value} pair example {sankalp:23, abhishek:25} . Its root interface is Map Interface
 
-> NOTE:   
-> parent interface of Collection interface is Iterable
+> Note:  
+> Parent interface of Collection interface is Iterable
 
 ### Package
 `java.util`  

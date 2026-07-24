@@ -1,9 +1,9 @@
 # Exception Handling
 
-If unhandled exceptions occure in run time then:
+If unhandled exceptions occur in run time then:
 
 1. The program is terminated abnormally.
-2. Rest of the application is not excuted.
+2. Rest of the application is not executed.
 
 To overcome the above problem we handle the exception using:
 
@@ -34,11 +34,12 @@ Try block can have 3 valid syntax
 
 1. try with catch
     - try with multiple catch (make sure that the catch block order is child --> parent i.e first handling should be done for child then parent).
-    - we can use the "pipe" (|) symbol to handle multipule exception in a single catch. (while using this approach we sould not keep parent child exception in the same chatch).
+    - we can use the "pipe" (|) symbol to handle multipule exception in a single catch. (while using this approach we should not keep parent child exception in the same catch).
 2. try with finally
 3. try with resource declarations
 
-Note: All other are invalid syntax
+> Note:  
+> All other are invalid syntax
 
 ### Printing:
 - printStackTrace(): We can use the method to directly print exception data.
@@ -48,7 +49,7 @@ Note: All other are invalid syntax
 are generally those from which a program can recover & it might be a good idea to recover from such exceptions programmatically. Examples include `FileNotFoundException`, `ParseException`, etc. A programmer is expected to check for these exceptions by using the try-catch block or throw it back to the caller
 
 ### ***Unchecked Exceptions*** 
-are those exceptions that might not happen if everything is in order, but they do occur. Examples include `ArrayIndexOutOfBoundException`, `ClassCastException`, etc. Many applications will use try-catch or throws clause for RuntimeExceptions & their subclasses but from the language perspective it is not required to do so. Do note that recovery from a RuntimeException is generally possible but the guys who designed the class/exception deemed it unnecessary for the end programmer to check for such exceptions.
+are those exceptions that might not happen if everything is in order, but they do occur. Examples include `ArrayIndexOutOfBoundsException`, `ClassCastException`, etc. Many applications will use try-catch or throws clause for RuntimeExceptions & their subclasses but from the language perspective it is not required to do so. Do note that recovery from a RuntimeException is generally possible but the guys who designed the class/exception deemed it unnecessary for the end programmer to check for such exceptions.
 
 ### ***Errors*** 
 are also unchecked exception & the programmer is not required to do anything with these. In fact it is a bad idea to use a try-catch clause for Errors. Most often, recovery from an Error is not possible & the program should be allowed to terminate. Examples include `OutOfMemoryError`, `StackOverflowError`, etc.
@@ -56,7 +57,7 @@ are also unchecked exception & the programmer is not required to do anything wit
 
 ## Some Examples of try-catch
 
-*** Case 1: *** try-catch direct case
+***Case 1:*** try-catch direct case
 
 ```java
     try{
@@ -66,7 +67,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 2: *** try with not matching catch. In this case code will terminate abnormally
+***Case 2:*** try with not matching catch. In this case code will terminate abnormally
 
 ```java
     try{
@@ -77,7 +78,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 3: *** if there is no exception in try block, catch blocks are not checked
+***Case 3:*** if there is no exception in try block, catch blocks are not checked
 
 ```java
     try{
@@ -87,7 +88,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 4: *** independent try blocks are not allowed
+***Case 4:*** independent try blocks are not allowed
 
 ```java
     try{
@@ -95,7 +96,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 5: *** statements in between try and catch are invalid syntax
+***Case 5:*** statements in between try and catch are invalid syntax
 
 ```java
     try{
@@ -107,7 +108,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 6: *** if exception is raised in catch block the program will end abnormally
+***Case 6:*** if exception is raised in catch block the program will end abnormally
 
 ```java
     try{
@@ -118,7 +119,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 7: *** if exception is raised in try block the remaining code of the try block is not executed
+***Case 7:*** if exception is raised in try block the remaining code of the try block is not executed
 
 ```java
     try{
@@ -129,7 +130,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 8: *** if exception is raised in try block the remaining code of the try block is not executed
+***Case 8:*** if exception is raised in try block the remaining code of the try block is not executed
 
 ```java
     try{
@@ -140,7 +141,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 9: *** if exception is raised in catch block the finally will still get executed then will end abnormally
+***Case 9:*** if exception is raised in catch block the finally will still get executed then will end abnormally
 
 ```java
     try{
@@ -153,7 +154,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 10: *** if exception is raised in finally block the program will end abnormally
+***Case 10:*** if exception is raised in finally block the program will end abnormally
 
 ```java
     try{
@@ -166,7 +167,7 @@ are also unchecked exception & the programmer is not required to do anything wit
     }
 ```
 
-*** Case 11: *** if system exit is done jvm is exited then finally is not executed.
+***Case 11:*** if system exit is done jvm is exited then finally is not executed.
 
 ```java
     try{

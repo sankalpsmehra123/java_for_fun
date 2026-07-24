@@ -1,9 +1,7 @@
-151. Reverse Words in a String
+# 151. Reverse Words in a String
 
-Solved
-Medium
-Topics
-Companies
+**Difficulty:** Medium
+
 Given an input string s, reverse the order of the words.
 
 A word is defined as a sequence of non-space characters. The words in s will be separated by at least one space.
@@ -30,7 +28,7 @@ Explanation: You need to reduce multiple spaces between two words to a single sp
  
 
 Constraints:
-1 <= s.length <= 104
+1 <= s.length <= 10^4
 s contains English letters (upper-case and lower-case), digits, and spaces ' '.
 There is at least one word in s.
  

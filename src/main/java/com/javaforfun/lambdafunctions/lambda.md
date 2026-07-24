@@ -13,29 +13,30 @@
 
 ## Problems of OOP
 
-Every thing is assosiated with an object. No functions is possible without any class.
+Everything is associated with an object. No function is possible without a class.
 
 ## Lambda Expression
 
-A lambda expression is a inline value that is assigned to a variable. In lambda expression we assing a method to a vaiable i.e. the variable then contains the method.
+A lambda expression is an inline value that is assigned to a variable. In a lambda expression we assign a method to a variable, i.e. the variable then contains the method.
 
-### Format of lamda expression
+### Format of lambda expression
 
 ``` java
 <FunctionalInterfaceType> variableName = (parameters) -> {block_of_code} 
 ```
-NOTE: All the interfaces mentioned in below examples are [***Functional Interfaces***](lambda.md#functional-interface).
+> Note:  
+> All the interfaces mentioned in below examples are [***Functional Interfaces***](lambda.md#functional-interface).
 
 #### Examples:
-1. Lambda expression without an arguement(parameter).
+1. Lambda expression without an argument (parameter).
 ```java
     GreetingInterface greetingsFunction = () -> System.out.println();
 ```
-2. Lambda expression with arguements(parameters).
+2. Lambda expression with arguments (parameters).
 ```java
     DoubleInterface doubleNumberFunction = (int a) -> a*2;
     AddInterface addFunction = (int a, int b) -> a+b;
-    // when passing the parameters to the lamda we can skip the type and the compiler will figure that out on its own using a concept called type inference
+    // when passing the parameters to the lambda we can skip the type and the compiler will figure that out on its own using a concept called type inference
     DivisionInterface safeDivideFunction = (a, b) -> {
         if(b == 0 ) return 0;
         return a/b;
@@ -43,12 +44,13 @@ NOTE: All the interfaces mentioned in below examples are [***Functional Interfac
     StringLengthInterface stringLengthCountFunction = (String s) -> s.length();
 ```
 
-NOTE: The Example saveDevisionFunction is using a concept called ***type inference*** using this concept the compiler will get to know the type of the passed parameter using the method signature defiend in the functional interface.
+> Note:  
+> The example `safeDivideFunction` is using a concept called ***type inference*** - using this concept the compiler is able to figure out the type of the passed parameter from the method signature defined in the functional interface.
 
 we can also pass the lambda expression as the parameter directly to a function as shown in below code snippet
 
 ```java
-//function which excepts lambda expression as input
+//function which accepts lambda expression as input
 greet(()-> System.out.println("hello"));
 
 public void greet(_____){
@@ -59,23 +61,24 @@ public void greet(_____){
 ## Functional Interface
 
 #### Annotation:
-@FunctionalInterface: helps us identify that in this perticular interface not more than one abstract method is allowed.
+@FunctionalInterface: helps us identify that in this particular interface not more than one abstract method is allowed.
 
-#### Defination (Java 7):
+#### Definition (Java 7):
 An interface with only one abstract method.
 
-#### Defination (Java 8+):
-An interface with only one abstract methods. It might or might not have default methods.
+#### Definition (Java 8+):
+An interface with only one abstract method. It might or might not have default methods.
 
-NOTE: Definations are different because of the default keyword that was introduces to implement methods in interfaces (java 9+).
+> Note:  
+> The definitions differ because of the `default` keyword, which was introduced to implement methods in interfaces (Java 8+).
 
 
-## Anonymus Inner Class
+## Anonymous Inner Class
 
-Inline implementation of an interface by creating an anonymus class
+Inline implementation of an interface by creating an anonymous class
 
 ```java
-    //Example of anonymus inner class of GreetingInterface.
+    //Example of anonymous inner class of GreetingInterface.
     GreetingInterface greetings = new GreetingInterface() {
         public void greet() {
             System.out.println("hello!");

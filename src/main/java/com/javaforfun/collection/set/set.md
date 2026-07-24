@@ -17,7 +17,7 @@
 | Allows Duplicate | No |
 | Method Call Type | Not Synchronised |
 | Insertion Order | Not Preserved |
-| Underlaying Data Structure | Hash Table |
+| Underlying Data Structure | Hash Table |
 | Possible Cursors | Iterator |
 
 ### Sub-class:
@@ -38,8 +38,8 @@ Constructs a new, empty set; the backing `HashMap` instance has the specified 
 **HashSet(Collection<? extends E> c)**:  
 Constructs a new set containing the elements in the specified collection.
 
->Note:  
->Load Factor is a measure of how full the set is allowed to get before its capacity is automatically increased (doubles). range is 0.0 to 1.0 default is 0.75 (or 75%).
+> Note:  
+> Load Factor is a measure of how full the set is allowed to get before its capacity is automatically increased (doubles). range is 0.0 to 1.0 default is 0.75 (or 75%).
 
 ### Methods:
 
@@ -70,7 +70,7 @@ Constructs a new set containing the elements in the specified collection.
 | Allows Duplicate | No |
 | Method Call Type | Not Synchronised |
 | Insertion Order | Preserved |
-| Underlaying Data Structure | Hash Table |
+| Underlying Data Structure | Hash Table and Linked List |
 | Possible Cursors | Iterator |
 
 #### HashSet Vs LinkedHashSet
@@ -78,20 +78,20 @@ Insertion order is preserved in LinkedHashSet and not in HashSet
 
 ### Constructor:
 
-**LinkedHashSet()**:
+**LinkedHashSet()**:  
 Constructs a new, empty linked hash set with the default initial capacity (16) and load factor (0.75).
 
-**LinkedHashSet(int initialCapacity)**:
+**LinkedHashSet(int initialCapacity)**:  
 Constructs a new, empty linked hash set with the specified initial capacity and the default load factor (0.75).
 
-**LinkedHashSet(int initialCapacity, float loadFactor)**:
+**LinkedHashSet(int initialCapacity, float loadFactor)**:  
 Constructs a new, empty linked hash set with the specified initial capacity and load factor.
 
-**LinkedHashSet(Collection<? extends E> c)**:
+**LinkedHashSet(Collection<? extends E> c)**:  
 Constructs a new linked hash set with the same elements as the specified collection.
 
->Note:  
->Load Factor is a measure of how full the set is allowed to get before its capacity is automatically increased. range is 0.0 to 1.0
+> Note:  
+> Load Factor is a measure of how full the set is allowed to get before its capacity is automatically increased. range is 0.0 to 1.0
 
 ### Methods:
 
@@ -109,21 +109,21 @@ Constructs a new linked hash set with the same elements as the specified collect
 | `Spliterator<E>` | `spliterator()` | Creates a late-binding and fail-fast Spliterator over the elements in this set. |
 
 
-## TreeHashSet
+## TreeSet
 
 | Property | Description |
 | --- | --- |
 | Version | Java 1.2 |  
-| Storage Type | Homoginious Data. |
+| Storage Type | Homogeneous Data. |
 | Stores Null Values | No |
 | Allows Duplicate | No |
 | Method Call Type | Not Synchronised |
 | Insertion Order | Not Preserved |
-| Underlaying Data Structure | Balanced Tree |
+| Underlying Data Structure | Balanced Tree |
 | Possible Cursors | Iterator |
 
->Note:  
->Implements comparable interface
+> Note:  
+> Implements comparable interface
 
 ### Constructor:
 
