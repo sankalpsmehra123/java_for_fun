@@ -118,7 +118,7 @@ Constructs a new linked hash set with the same elements as the specified collect
 | Stores Null Values | No |
 | Allows Duplicate | No |
 | Method Call Type | Not Synchronised |
-| Insertion Order | Not Preserved |
+| Insertion Order | Not Preserved, Natural order |
 | Underlying Data Structure | Balanced Tree |
 | Possible Cursors | Iterator |
 

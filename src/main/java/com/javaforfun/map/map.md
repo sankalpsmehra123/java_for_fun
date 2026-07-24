@@ -158,7 +158,7 @@ Constructs an insertion-ordered LinkedHashMap instance with the same mappings as
 | Stores Null Key:Values | Yes |
 | Allows Duplicate | No duplicate keys, duplicate values allowed |
 | Method Call Type | Not Synchronised |
-| Insertion Order | Not Preserved |
+| Insertion Order | Not Preserved, Natural order |
 | Underlying Data Structure | Red-Black Tree |
 | Possible Cursors | Iterator |
 
