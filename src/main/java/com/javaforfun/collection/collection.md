@@ -15,8 +15,71 @@
 | `char` | `Character` | 16-bit Unicode character |
 | `boolean` | `Boolean` | Logical true/false value |
 
-#### Generics:
-To Provide type safety to Collection we use concepts called `Generics`
+### Generics in Collections
+
+Generics (introduced in Java 5) allow classes, interfaces, and methods to be parameterized by type. In the Java Collections Framework, Generics are used to provide **compile-time type safety** and eliminate the need for manual type casting.
+
+#### 1. Why Do We Need Generics?
+
+##### Before Java 5 (Without Generics):
+Collections stored generic `Object` references. This resulted in two major issues:
+1. **No Type Safety**: A single list could hold any combination of types (e.g., `String`, `Integer`, custom objects).
+2. **Explicit Type Casting**: You had to manually cast objects when retrieving them, which could easily lead to runtime `ClassCastException` errors.
+
+```java
+// Without Generics (raw types)
+List list = new ArrayList();
+list.add("Hello");
+list.add(10); // Compiles fine, but dangerous!
+
+// Retrieving requires manual casting
+String s1 = (String) list.get(0);
+String s2 = (String) list.get(1); // Throws ClassCastException at runtime!
+```
+
+##### With Generics:
+```java
+// With Generics
+List<String> list = new ArrayList<>();
+list.add("Hello");
+// list.add(10); // Compile-time error: Incompatible types!
+
+// No casting required
+String s = list.get(0); 
+```
+
+---
+
+#### 2. Wildcards in Generics
+
+Wildcards (`?`) represent an unknown type. They are used in method arguments to write highly reusable methods.
+
+| Wildcard Type | Syntax | Description | Example |
+| :--- | :--- | :--- | :--- |
+| **Unbounded Wildcard** | `?` | Matches any type. | `List<?>` |
+| **Upper Bounded Wildcard** | `? extends T` | Matches any type that is a subtype of `T` (inclusive). Used for **read operations** (covariance). | `List<? extends Number>` |
+| **Lower Bounded Wildcard** | `? super T` | Matches any type that is a supertype of `T` (inclusive). Used for **write operations** (contravariance). | `List<? super Integer>` |
+
+##### PECS Principle (Producer Extends, Consumer Super):
+* **Producer Extends (`extends`)**: If you only read from a collection, it is a producer. Use `? extends T`.
+* **Consumer Super (`super`)**: If you only write/add to a collection, it is a consumer. Use `? super T`.
+
+```java
+// Producer Extends Example (Reading)
+public static double sumOfList(List<? extends Number> list) {
+    double sum = 0.0;
+    for (Number n : list) {
+        sum += n.doubleValue(); // Safe to read as Number
+    }
+    return sum;
+}
+
+// Consumer Super Example (Writing)
+public static void addNumbers(List<? super Integer> list) {
+    list.add(1); // Safe to write/add Integer
+    list.add(2);
+}
+```
 
 #### Auto-Boxing:
 Collection in java use  `auto-boxing` concept to automatically convert primitive types into Objects

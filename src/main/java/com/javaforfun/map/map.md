@@ -246,6 +246,21 @@ Constructs a new tree map containing the same mappings and using the same orderi
 
 ---
 
+### Fail-Fast vs. Fail-Safe Iterators
+
+#### 1. Fail-Fast Iterators
+* **Mechanism:** Fail-fast iterators operate directly on the collection's structure. They maintain a modification count (`modCount`).
+* **Behavior:** If the collection is structurally modified (adding, updating, or deleting elements) at any point during iteration by any thread (other than via the iterator's own `remove()` method), the iterator immediately throws a `ConcurrentModificationException`.
+* **Pros & Cons:** Memory efficient (does not copy data), but fragile in concurrent environments.
+* **Examples:** `HashMap`, `ArrayList`, `HashSet`.
+
+#### 2. Fail-Safe (Weakly Consistent) Iterators
+* **Mechanism:** Fail-safe/weakly-consistent iterators do not operate directly on the active, live collection structure. Instead, they iterate on a copy of the collection (e.g., `CopyOnWriteArrayList`) or access a **weakly consistent view** of the data structures (e.g., `ConcurrentHashMap` using segment/node traversal).
+* **Behavior:** They **never** throw a `ConcurrentModificationException`. Any modification made during iteration may or may not be reflected in the iterator depending on when the change is made.
+* **Pros & Cons:** Resilient to concurrency, but might read slightly stale data (weak consistency).
+* **Examples:** `ConcurrentHashMap`, `CopyOnWriteArrayList`, `ConcurrentLinkedQueue`.
+
+---
 ### Code Examples
 
 #### 1. Iteration Behavior (Fail-Fast vs. Fail-Safe)
