@@ -4,3 +4,4 @@
 target/
 .vscode/
 .m2/
+*.ser

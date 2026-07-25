@@ -97,5 +97,73 @@ Collections with functional programming has concepts like FlatMap, filter, Mappe
 | `default <T> T[]` | `toArray(IntFunction<T[]> generator)` | Returns an array containing all of the elements in this collection, using the provided generator function to allocate the returned array. |
 | `<T> T[]` | `toArray(T[] a)` | Returns an array containing all of the elements in this collection; the runtime type of the returned array is that of the specified array. |
 
+---
+
+## Synchronizing Collections
+
+By default, most standard implementations of `List`, `Set`, and `Map` in Java (such as `ArrayList`, `HashSet`, and `HashMap`) are **not synchronized** (non-thread-safe).
+
+To make these collections thread-safe, the `java.util.Collections` utility class provides static factory wrapper methods that return synchronized, thread-safe collections.
+
+### 1. Synchronizing List Classes
+To make any `List` (like `ArrayList` or `LinkedList`) synchronized:
+```java
+List<String> list = new ArrayList<>();
+List<String> synchronizedList = Collections.synchronizedList(list);
+```
+> [!IMPORTANT]
+> When iterating over a synchronized collection (e.g., using an `Iterator` or `for-each` loop), you **must** manually synchronize on the returned collection to prevent race conditions:
+> ```java
+> synchronized (synchronizedList) {
+>     Iterator<String> iterator = synchronizedList.iterator();
+>     while (iterator.hasNext()) {
+>         System.out.println(iterator.next());
+>     }
+> }
+> ```
+
+### 2. Synchronizing Set Classes
+To make any `Set` (like `HashSet` or `TreeSet`) synchronized:
+```java
+// General Set
+Set<String> set = new HashSet<>();
+Set<String> synchronizedSet = Collections.synchronizedSet(set);
+
+// SortedSet (e.g., TreeSet)
+SortedSet<String> sortedSet = new TreeSet<>();
+SortedSet<String> synchronizedSortedSet = Collections.synchronizedSortedSet(sortedSet);
+
+// NavigableSet (e.g., TreeSet)
+NavigableSet<String> navigableSet = new TreeSet<>();
+NavigableSet<String> synchronizedNavigableSet = Collections.synchronizedNavigableSet(navigableSet);
+```
+
+### 3. Synchronizing Map Classes
+To make any `Map` (like `HashMap` or `TreeMap`) synchronized:
+```java
+// General Map
+Map<String, Integer> map = new HashMap<>();
+Map<String, Integer> synchronizedMap = Collections.synchronizedMap(map);
+
+// SortedMap (e.g., TreeMap)
+SortedMap<String, Integer> sortedMap = new TreeMap<>();
+SortedMap<String, Integer> synchronizedSortedMap = Collections.synchronizedSortedMap(sortedMap);
+
+// NavigableMap (e.g., TreeMap)
+NavigableMap<String, Integer> navigableMap = new TreeMap<>();
+NavigableMap<String, Integer> synchronizedNavigableMap = Collections.synchronizedNavigableMap(navigableMap);
+```
+> [!IMPORTANT]
+> Just like list/set iterators, when iterating over any collection views of the synchronized map (like `keySet()`, `entrySet()`, or `values()`), manual synchronization on the map itself is required:
+> ```java
+> synchronized (synchronizedMap) {
+>     for (Map.Entry<String, Integer> entry : synchronizedMap.entrySet()) {
+>         System.out.println(entry.getKey() + " : " + entry.getValue());
+>     }
+> }
+> ```
+
+---
+
 > Important Note:  
 >(If the links above are not working please change the first "/folderPath/" directory name to your directory name so that the path looks like /<your_directory_name>/<fileName>)

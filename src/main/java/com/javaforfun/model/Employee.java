@@ -2,7 +2,7 @@ package com.javaforfun.model;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable{
+public class Employee implements Serializable {
 
     private String name;
     private int employeeId;
@@ -10,7 +10,7 @@ public class Employee implements Serializable{
 
     public Employee() {
     }
-    
+
     public String getName() {
         return name;
     }
@@ -22,9 +22,9 @@ public class Employee implements Serializable{
 
     public int getEmployeeId() {
         return employeeId;
-    }   
+    }
 
-public Employee setEmployeeId(int employeeId) {
+    public Employee setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
         return this;
     }
@@ -40,6 +40,6 @@ public Employee setEmployeeId(int employeeId) {
 
     @Override
     public String toString() {
-        return "Employee [name=" + name + ", employeeId=" + employeeId + "]" + " password: " + password;
+        return "Employee [name=" + name + ", employeeId=" + employeeId + " password= " + password + "]";
     }
 }
