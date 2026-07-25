@@ -228,3 +228,103 @@ Constructs a new tree map containing the same mappings and using the same orderi
 | `SortedMap<K,V>` | `tailMap(K fromKey)` | Returns a view of the portion of this map whose keys are greater than or equal to fromKey. |
 | `NavigableMap<K,V>` | `tailMap(K fromKey, boolean inclusive)` | Returns a view of the portion of this map whose keys are greater than (or equal to, if inclusive is true) fromKey. |
 | `Collection<V>` | `values()` | Returns a Collection view of the values contained in this map. |
+
+---
+
+## HashMap vs. ConcurrentHashMap
+
+### Comparison Table
+
+| Feature / Criteria | HashMap | ConcurrentHashMap |
+| :--- | :--- | :--- |
+| **Thread Safety** | Non-synchronized (Not thread-safe). | Synchronized (Thread-safe). |
+| **Locking Mechanism** | No locking mechanism. | Fine-grained, bucket-level locking (uses CAS and `synchronized` on individual bucket heads since Java 8). |
+| **Null Keys/Values** | Allows one `null` key and multiple `null` values. | Does **not** allow `null` keys or `null` values (throws `NullPointerException`). |
+| **Iteration Behavior** | **Fail-fast** iterator. Throws `ConcurrentModificationException` if modified during iteration. | **Fail-safe / Weakly consistent** iterator. Does not throw `ConcurrentModificationException` if modified during iteration. |
+| **Performance** | Faster in single-threaded environments because there is no synchronization overhead. | High performance in multi-threaded environments because thread operations are confined to individual segments/buckets rather than locking the entire map. |
+| **Package** | `java.util` | `java.util.concurrent` |
+
+---
+
+### Code Examples
+
+#### 1. Iteration Behavior (Fail-Fast vs. Fail-Safe)
+
+##### HashMap (Fail-Fast Exception):
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.ConcurrentModificationException;
+
+public class HashMapFailFastExample {
+    public static void main(String[] args) {
+        Map<String, String> map = new HashMap<>();
+        map.put("A", "Apple");
+        map.put("B", "Banana");
+
+        try {
+            for (String key : map.keySet()) {
+                System.out.println("Processing key: " + key);
+                // Modifying the map during iteration causes a ConcurrentModificationException
+                map.put("C", "Cherry"); 
+            }
+        } catch (ConcurrentModificationException e) {
+            System.out.println("Caught ConcurrentModificationException in HashMap!");
+        }
+    }
+}
+```
+
+##### ConcurrentHashMap (Fail-Safe / Weakly Consistent):
+```java
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.Map;
+
+public class ConcurrentHashMapFailSafeExample {
+    public static void main(String[] args) {
+        Map<String, String> map = new ConcurrentHashMap<>();
+        map.put("A", "Apple");
+        map.put("B", "Banana");
+
+        // Safe to modify the map during iteration
+        for (String key : map.keySet()) {
+            System.out.println("Processing key: " + key);
+            map.put("C", "Cherry"); 
+        }
+
+        System.out.println("Final Map: " + map);
+    }
+}
+```
+
+#### 2. Handling Null Keys and Values
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+public class NullHandlingExample {
+    public static void main(String[] args) {
+        // HashMap accepts nulls
+        Map<String, String> hashMap = new HashMap<>();
+        hashMap.put(null, "NoKey");
+        hashMap.put("Key", null);
+        System.out.println("HashMap null insertion succeeded.");
+
+        // ConcurrentHashMap rejects nulls
+        Map<String, String> concurrentMap = new ConcurrentHashMap<>();
+        try {
+            concurrentMap.put(null, "NoKey"); // Throws NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("ConcurrentHashMap threw NullPointerException for null key!");
+        }
+
+        try {
+            concurrentMap.put("Key", null); // Throws NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("ConcurrentHashMap threw NullPointerException for null value!");
+        }
+    }
+}
+```
